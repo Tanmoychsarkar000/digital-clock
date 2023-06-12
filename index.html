@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="digital-clock">
+         <div class="time">
+             <div class="left-side">
+                    <samp id="hours">00</samp>
+                    
+             </div><!--end left side-->
+                 <div class="right-side">
+                        <div class="right-top">
+                            <spam id="dots">:</spam>
+                            <spam id="minutes">00</spam>
+                        </div><!--end right top-->
+                             <div class="right-down">
+                                <span id="period">pm</span>
+                                <span id="seconds">00</span>
+                            </div><!--end right down-->
+                </div><!--end right side-->
+         </div><!--end time-->
+    </div><!--end dightal clock-->
+    <script>
+      function clock(){
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minutes');
+        let secunds = document.getElementById('seconds');
+        let period = document.getElementById('period');
+
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+        
+        let ampm = h >= 12 ? "pm" : "am"; 
+
+        hours.innerHTML = h;
+        minutes.innerHTML = m;
+        secunds.innerHTML = s;
+        period.innerHTML = ampm;
+
+
+      };    
+      setInterval(clock,1000)
+    </script>
+</body>
+</html>
